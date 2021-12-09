@@ -17,7 +17,7 @@ use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 
-final class BitBagPluginCommonsPlugin extends Extension
+final class BitBagPluginCommonsExtension extends Extension
 {
     public function load(array $config, ContainerBuilder $container): void
     {
