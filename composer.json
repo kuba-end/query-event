@@ -1,0 +1,7 @@
+{
+    "name": "bitbag/plugin-commons",
+    "description": "Common code for plugins",
+    "type": "library",
+    "license": "MIT",
+    "require": {}
+}
