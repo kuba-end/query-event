@@ -19,14 +19,15 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 
 
-final class BitBagPluginCommonsExtension extends Extension
+final class BitBagPluginCommonsCatalogExtension extends Extension
 {
     public function load(array $config, ContainerBuilder $container): void
     {
         $config = $this->processConfiguration($this->getConfiguration([], $container), $config);
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config/services/pluginCommons'));
 
-        $loader->load('services.xml');
+        $loader->load('catalog_event_factory.xml');
+        $loader->load('catalog_query_dispatcher.xml');
     }
 
     public function getConfiguration(array $config, ContainerBuilder $container): ConfigurationInterface
