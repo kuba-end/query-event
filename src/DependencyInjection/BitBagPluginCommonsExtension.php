@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace BitBag\PluginCommonsPlugin\DependencyInjection;
 
-use BitBag\SyliusPluginCommonsPlugin\DependencyInjection\Configuration;
+use BitBag\PluginCommonsPlugin\DependencyInjection\Configuration;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
