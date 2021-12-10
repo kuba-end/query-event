@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace BitBag\SyliusElasticsearchPlugin\Factory;
+namespace BitBag\PluginCommonsPlugin\Factory;
 
 use BitBag\SyliusElasticsearchPlugin\EventListener\QueryCreatedEventInterface;
 use Elastica\Query\AbstractQuery;

@@ -10,7 +10,7 @@ Do you need more information about us and what we do? Visit our   website!
 We are hiring developers from all over the world. Join us and start your new, exciting adventure and become part of us: https://bitbag.io/career
   */
 
-namespace BitBag\SyliusElasticsearchPlugin\EventListener;
+namespace BitBag\PluginCommonsPlugin\EventListener;
 
 use Elastica\Query\AbstractQuery;
 

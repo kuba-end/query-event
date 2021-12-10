@@ -9,7 +9,7 @@ We are hiring developers from all over the world. Join us and start your new, ex
 */
 declare(strict_types=1);
 
-namespace BitBag\SyliusElasticsearchPlugin\Notifier;
+namespace BitBag\PluginCommonsPlugin\Notifier;
 
 use BitBag\SyliusElasticsearchPlugin\EventListener\QueryCreatedEventInterface;
 use Elastica\Query\AbstractQuery;
