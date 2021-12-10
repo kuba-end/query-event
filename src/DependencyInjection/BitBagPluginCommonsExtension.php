@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace BitBag\PluginCommonsPlugin\DependencyInjection;
 
-use BitBag\SyliusCrossSellingPlugin\DependencyInjection\Configuration;
+use BitBag\SyliusPluginCommonsPlugin\DependencyInjection\Configuration;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -19,15 +19,14 @@ use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 
 
-final class BitBagPluginCommonsCatalogExtension extends Extension
+final class BitBagPluginCommonsExtension extends Extension
 {
     public function load(array $config, ContainerBuilder $container): void
     {
         $config = $this->processConfiguration($this->getConfiguration([], $container), $config);
-        $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config/services/pluginCommons'));
+        $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config/'));
 
-        $loader->load('catalog_event_factory.xml');
-        $loader->load('catalog_query_dispatcher.xml');
+        $loader->load('services.xml');
     }
 
     public function getConfiguration(array $config, ContainerBuilder $container): ConfigurationInterface
