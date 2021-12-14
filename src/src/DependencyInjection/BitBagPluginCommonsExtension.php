@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace BitBag\PluginCommonsPlugin\DependencyInjection;
 
+use BitBag\PluginCommonsPlugin\DependencyInjection\Configuration;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -25,7 +26,24 @@ final class BitBagPluginCommonsExtension extends Extension
         $config = $this->processConfiguration($this->getConfiguration([], $container), $config);
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config/'));
 
-        $loader->load('services.xml');
+
+        $bundles = $container->getParameter('kernel.bundles');
+
+        if (array_key_exists('BitBagSyliusElasticsearchPlugin', $bundles)) {
+            $loader->load('services/pluginCommons/elasticsearch_event_factory.xml');
+            $loader->load('services/pluginCommons/elasticsearch_query_dispatcher.xml');
+            $loader->load('services/pluginCommons/elasticsearch_subscriber.xml');
+        }
+        if (array_key_exists('BitBagSyliusCatalogPlugin', $bundles)) {
+            $loader->load('services/pluginCommons/catalog_event_factory.xml');
+            $loader->load('services/pluginCommons/catalog_query_dispatcher.xml');
+            $loader->load('services/pluginCommons/catalog_subscriber.xml');
+        }
+        if (array_key_exists('BitBagSyliusCrosssellingPlugin', $bundles)) {
+            $loader->load('services/pluginCommons/crossselling_event_factory.xml');
+            $loader->load('services/pluginCommons/crossselling_query_dispatcher.xml');
+            $loader->load('services/pluginCommons/crossselling_dispatcher.xml');
+        }
     }
 
     public function getConfiguration(array $config, ContainerBuilder $container): ConfigurationInterface

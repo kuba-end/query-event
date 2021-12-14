@@ -9,12 +9,13 @@ We are hiring developers from all over the world. Join us and start your new, ex
 */
 declare(strict_types=1);
 
-namespace BitBag\PluginCommonsPlugin\Notifier;
+namespace BitBag\PluginCommonsPlugin;
 
-use BitBag\PluginCommonsPlugin\Event\QueryCreatedEventInterface;
-use Elastica\Query\AbstractQuery;
+use Sylius\Bundle\CoreBundle\Application\SyliusPluginTrait;
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-interface QueryDispatcherInterface
+
+final class BitBagPluginCommonsPlugin extends Bundle
 {
-    public function dispatchNewQuery(AbstractQuery $boolQuery): QueryCreatedEventInterface;
+    use SyliusPluginTrait;
 }

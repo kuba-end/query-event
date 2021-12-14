@@ -1,4 +1,6 @@
 <?php
+
+declare(strict_types=1);
 /*
 
 This file was created by developers working at BitBag
@@ -6,15 +8,15 @@ This file was created by developers working at BitBag
 Do you need more information about us and what we do? Visit our   website!
 
 We are hiring developers from all over the world. Join us and start your new, exciting adventure and become part of us: https://bitbag.io/career
-*/
-declare(strict_types=1);
+  */
 
-namespace BitBag\PluginCommonsPlugin\Notifier;
+namespace BitBag\PluginCommonsPlugin\Event;
 
-use BitBag\PluginCommonsPlugin\Event\QueryCreatedEventInterface;
 use Elastica\Query\AbstractQuery;
 
-interface QueryDispatcherInterface
+interface QueryCreatedEventInterface
 {
-    public function dispatchNewQuery(AbstractQuery $boolQuery): QueryCreatedEventInterface;
+    const NAME = "query.created.event";
+
+    public function getQuery(): AbstractQuery;
 }
