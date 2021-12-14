@@ -2,9 +2,7 @@
 
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
-        <service id="bitbag.plugin_commons_plugin.catalog_query_dispatcher" class="BitBag\PluginCommonsPlugin\Notifier\QueryDispatcher">
-            <argument type="service" id="bitbag.plugin_commons_plugin.catalog_event_factory" />
-            <argument type="service" id="event_dispatcher" />
+        <service id="bitbag.plugin_commons_plugin.elasticsearch_event_factory" class="BitBag\PluginCommonsPlugin\Factory\QueryCreatedEventFactory">
         </service>
     </services>
 </container>

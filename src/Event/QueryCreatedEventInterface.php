@@ -17,6 +17,6 @@ use Elastica\Query\AbstractQuery;
 interface QueryCreatedEventInterface
 {
     const NAME = "query.created.event";
-    
+
     public function getQuery(): AbstractQuery;
 }
